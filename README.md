@@ -41,3 +41,16 @@ An supervised approach using XGBoost and a Linear Learner model.  Hyperparameter
 # End Goal
 The goal is to predict fraudulent transactions.
 
+
+Thoughts from Emily
+- This is a great summary! I love your depth and clarity. A few additional points:
+  - RCF has 2 important hyperparameters: num_samples_per_tree and num_trees. Start with num_trees at 100, and then it would be great if you could run a hyperparameter tuning job to find the best setting. Run the experiment from 50 to 150, with 30 models, and only 1 in parallel. It will take some time to run, but you should be able to see clearly which setting gets you the best restuls.
+  
+  The second important hyperparameter is num_samples_per_tree. That number actually comes from the dataset, is the ratio of normal transactions to anomalous, which I believe comes out to 712. 
+  
+  Also consider using one hot encoding for the type of transaction, one of these types ends up having a big impact in predicting fraud. 
+  
+  Thanks!
+  
+  
+  
